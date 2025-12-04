@@ -243,12 +243,12 @@ header a{
         bottom: 50px;
     }
 }
-.carousel.prev .thumbnail .item:nth-child(1){
+/*.carousel.prev .thumbnail .item:nth-child(1){
     font-weight: 0;
     overflow: hidden;
     opacity: 0;
     animation: showThumbnail 0.5s linear 1 forwards;
-}/*
+}
 @keyframes showThumbnail {
     to{
         width: 150px;
