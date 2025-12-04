@@ -111,7 +111,7 @@ header a{
     height: 220px;
     flex-shrink: 0;
     position: relative;
-    transition: width 0.5s;
+
 }
 .thumbnail .item img{
     width: 100%;
@@ -168,7 +168,7 @@ header a{
     filter:blur(20px);
     opacity: 0;
     /* CORRECTED LINE: linear1 -> linear */
-    animation: showContant 0.5s 1s linear forwards;
+    animation: showContant 0.5s 1s linear 1 forwards;
 }
 @keyframes showContant{
     to{
@@ -188,11 +188,12 @@ header a{
 .carousel .list .item:nth-child(1) .buttons{
     animation-delay: 1.8s;
 }
-.carousel .list .item:nth-child(1) img{
+.carousel.next .list .item:nth-child(1) img{
     width: 150px;
     height: 220px;
     position: absolute;
     left: 50%;
+    bottom: 50px;
     border-radius: 20px;
     animation: showImage 0.5s linear 1 forwards;
 
@@ -206,16 +207,16 @@ header a{
         border-radius: 0;
     }
 }
-.carousel.next .thumbnail .item:nth-child(1){
+/*.carousel.next .thumbnail .item:nth-child(1){
     width: 0;
     overflow: hidden;
     animation: showThumbnail .5s linear 1 forwards;
 }
-@keyframes showThumbnail{
+/*@keyframes showThumbnail{
     to{
         width: 150px;
     }
-}
+}*/
 .carousel.next .thumbnail{
     transform: translateX(150px);
     animation: transformThumbnail .5s linear 1 forwards;
@@ -243,7 +244,7 @@ header a{
         bottom: 50px;
     }
 }
-/*.carousel.prev .thumbnail .item:nth-child(1){
+.carousel.prev .thumbnail .item:nth-child(1){
     font-weight: 0;
     overflow: hidden;
     opacity: 0;
@@ -264,7 +265,7 @@ header a{
 @keyframes contentOut{
     to{
         transform: translateY(-150px);
-        filter: blur(20ox);
+        filter: blur(20px);
         opacity: 0;
     }
 }
@@ -296,8 +297,15 @@ header a{
     .carousel .list .item .contant{
         padding-right: 0;
     }
-    .carousel .list .item .title{
+    .carousel .list .item .contant .title{
         font-size: 30px;
     }
     
+}
+.carousel .list .item{
+    opacity: 0;
+}
+.carousel .list .item:nth-child(1){
+    opacity: 1;
+    z-index: 2;
 }
